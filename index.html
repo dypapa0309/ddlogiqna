@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>디디운송 기사 Q&A</title>
+  <meta name="description" content="디디운송 기사 전용 현장 Q&A. 검색/토글로 빠르게 기준 확인." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">디디운송 기사 Q&A</div>
+        <div class="brand-sub">현장에서 바로 확인하는 작업 기준 (검색/토글)</div>
+      </div>
+
+      <div class="top-actions">
+        <a class="btn btn-ghost" href="#urgent">🚨 긴급</a>
+        <a class="btn btn-ghost" href="#faq">📚 Q&A</a>
+        <!-- 회사  여기만 바꾸면 됨 -->
+        <a class="btn btn-primary" href="tel:010-4094-1666">📞 회사 전화</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">검색</h2>
+        <div class="card-sub">키워드로 찾고, 항목 눌러서 펼쳐봐.</div>
+      </div>
+
+      <label class="label" for="searchInput">검색어</label>
+      <input id="searchInput" type="text" placeholder="예: 주차, 동선, 계단, 대기, 파손, 리뷰, 취소, 정산" autocomplete="off" />
+      <div class="hint">검색 중에는 보기 편하게 자동으로 접혀. 다시 눌러서 펼치면 돼.</div>
+    </section>
+
+    <section id="urgent" class="card">
+      <div class="card-head">
+        <h2 class="card-title">긴급 상황 바로가기</h2>
+        <div class="card-sub">현장에서 자주 터지는 것만 버튼으로 뽑아놨어.</div>
+      </div>
+
+      <div class="urgent-grid">
+        <button class="urgent-btn" data-open="faq-34">
+          <div class="u-title">고객 분쟁 / 리뷰 협박</div>
+          <div class="u-sub">감정 대응 금지 → 회사 절차 안내</div>
+        </button>
+
+        <button class="urgent-btn" data-open="faq-31">
+          <div class="u-title">파손 발생</div>
+          <div class="u-sub">즉시 사진/영상 → 회사 보고</div>
+        </button>
+
+        <button class="urgent-btn" data-open="faq-4">
+          <div class="u-title">고객 미도착 / 노쇼</div>
+          <div class="u-sub">연락→대기→기록→회사 전달</div>
+        </button>
+
+        <button class="urgent-btn" data-open="faq-15">
+          <div class="u-title">추가금 발생</div>
+          <div class="u-sub">기사 단독 확정 금지 → 증빙 후 회사</div>
+        </button>
+
+        <button class="urgent-btn" data-open="faq-6">
+          <div class="u-title">주차 멀음 / 동선 과다</div>
+          <div class="u-sub">거리 영상/사진 확보가 핵심</div>
+        </button>
+
+        <button class="urgent-btn" data-open="faq-33">
+          <div class="u-title">공용부(엘베/복도) 문제</div>
+          <div class="u-sub">작업 전/후 사진 확보</div>
+        </button>
+      </div>
+
+      <div class="urgent-note">
+        <div class="note-title">기본 원칙</div>
+        <ul class="note-list">
+          <li>현장 변수는 <b>증빙(사진/영상)</b>이 먼저다.</li>
+          <li>금액/시간/분쟁은 <b>기사 단독 확정 금지</b>. 회사 기준으로 간다.</li>
+          <li>감정 싸움 금지. <b>절차 안내</b>로 프레임 전환.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq" class="card">
+      <div class="card-head">
+        <h2 class="card-title">Q&A</h2>
+        <div class="card-sub">눌러서 펼치고, 검색으로 바로 찾자.</div>
+      </div>
+
+      <div class="toolbar">
+        <button class="btn btn-small btn-ghost" id="expandAllBtn" type="button">전체 펼치기</button>
+        <button class="btn btn-small btn-ghost" id="collapseAllBtn" type="button">전체 접기</button>
+        <div class="count" id="resultCount">0개 항목</div>
+      </div>
+
+      <!-- JS가 여기에 Q&A를 렌더링 -->
+      <div id="faqList" class="faq"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="foot-title">디디운송 기사 Q&A</div>
+        <div class="foot-sub">현장 기준은 “증빙 → 회사 전달 → 절차 안내”</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
